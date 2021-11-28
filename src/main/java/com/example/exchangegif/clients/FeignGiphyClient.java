@@ -1,5 +1,6 @@
 package com.example.exchangegif.clients;
 
+import com.example.exchangegif.model.GiphyGif;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,10 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface FeignGiphyClient {
 
     @GetMapping()
-    String getRichGif(@RequestParam(name = "api_key") String apiKey,
-                      @RequestParam(name = "tag") String tag);
-
-    @GetMapping()
-    String getBrokeGif(@RequestParam(name = "api_key") String apiKey,
-                       @RequestParam(name = "tag") String tag);
+    GiphyGif getGif(@RequestParam(name = "api_key") String apiKey,
+                    @RequestParam(name = "tag") String tag);
 }

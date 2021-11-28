@@ -18,9 +18,9 @@ public class ExchangeGifController {
         this.exchangegifService = exchangegifService;
     }
 
-    @GetMapping("/{foobar}")
+    @GetMapping("/{foo}")
     public ResponseEntity<byte[]> getExchangeGif(
-            @PathVariable(name = "foobar") String rateCode) {
+            @PathVariable(name = "foo") String rateCode) {
         byte[] bytes = exchangegifService.getExchangeGif(rateCode.toUpperCase());
         return ResponseEntity
                 .ok()

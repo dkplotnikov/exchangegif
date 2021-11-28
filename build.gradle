@@ -8,6 +8,10 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+jar {
+	enabled = false
+}
+
 repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
@@ -20,10 +24,12 @@ ext {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'junit:junit:4.13.1'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
 }
 
 dependencyManagement {
